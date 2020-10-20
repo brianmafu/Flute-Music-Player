@@ -131,21 +131,37 @@ class Song {
   String uri;
   String albumArt;
   int trackId;
-  int count;
-  int timestamp;
+  int _count;
+  int _timestamp;
+  bool _isFav;
 
-  Song(
-      this.id,
-      this.artist,
-      this.title,
-      this.album,
-      this.albumId,
-      this.duration,
-      this.uri,
-      this.albumArt,
-      this.trackId,
-      this.count,
-      this.timestamp);
+  // setters and getters for properties
+  int get timestamp {
+    return _timestamp;
+  }
+
+  void set timestamp(int timestmp) {
+    _timestamp = timestmp;
+  }
+
+  int get count {
+    return _count;
+  }
+
+  void set count(int cnt) {
+    _count = cnt;
+  }
+
+  bool get isFav {
+    return _isFav;
+  }
+
+  void set isFav(bool isfv) {
+    _isFav = isfv;
+  }
+
+  Song(this.id, this.artist, this.title, this.album, this.albumId,
+      this.duration, this.uri, this.albumArt, this.trackId);
   Song.fromMap(Map m) {
     id = m["id"];
     artist = m["artist"];
@@ -156,7 +172,5 @@ class Song {
     uri = m["uri"];
     albumArt = m["albumArt"];
     trackId = m["trackId"];
-    timestamp = m['timestamp'];
-    count = m['count'];
   }
 }
