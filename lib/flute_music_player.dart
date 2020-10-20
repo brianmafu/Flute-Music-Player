@@ -133,7 +133,7 @@ class Song {
   int trackId;
   int _count;
   int _timestamp;
-  bool _isFav;
+  int _isFav;
 
   // setters and getters for properties
   int get timestamp {
@@ -152,11 +152,11 @@ class Song {
     _count = cnt;
   }
 
-  bool get isFav {
+  int get isFav {
     return _isFav;
   }
 
-  void set isFav(bool isfv) {
+  void set isFav(int isfv) {
     _isFav = isfv;
   }
 
@@ -172,5 +172,19 @@ class Song {
     uri = m["uri"];
     albumArt = m["albumArt"];
     trackId = m["trackId"];
+  }
+
+  Map toMap() {
+    return {
+      "id": id,
+      "artist": artist,
+      "title": title,
+      "album": album,
+      "albumId": albumId,
+      "duration": duration,
+      "uri": uri,
+      "albumArt": albumArt,
+      "trackId": trackId,
+    };
   }
 }
