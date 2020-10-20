@@ -131,9 +131,21 @@ class Song {
   String uri;
   String albumArt;
   int trackId;
+  int count;
+  int timestamp;
 
-  Song(this.id, this.artist, this.title, this.album, this.albumId,
-      this.duration, this.uri, this.albumArt, this.trackId);
+  Song(
+      this.id,
+      this.artist,
+      this.title,
+      this.album,
+      this.albumId,
+      this.duration,
+      this.uri,
+      this.albumArt,
+      this.trackId,
+      this.count,
+      this.timestamp);
   Song.fromMap(Map m) {
     id = m["id"];
     artist = m["artist"];
@@ -144,5 +156,7 @@ class Song {
     uri = m["uri"];
     albumArt = m["albumArt"];
     trackId = m["trackId"];
+    timestamp = m['timestamp'];
+    count = m['count'];
   }
 }
